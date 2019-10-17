@@ -4,16 +4,16 @@ package poker
 func Compare(cLeft *PokerCard, cRight *PokerCard) int {
 	var result int
 	// compare type
-	if cLeft.CardType > cRight.CardType {
+	if cLeft.Type > cRight.Type {
 		result = 1
-	} else if cLeft.CardType < cRight.CardType {
+	} else if cLeft.Type < cRight.Type {
 		result = 2
 	} else {
 		// compare face when type is same
-		for i := 0; i < len(cLeft.Faces); i++ {
-			if cLeft.Faces[i] > cRight.Faces[i] {
+		for i := 0; i < len(cLeft.ResultFaces); i++ {
+			if cLeft.ResultFaces[i] > cRight.ResultFaces[i] {
 				return 1
-			} else if cLeft.Faces[i] < cRight.Faces[i] {
+			} else if cLeft.ResultFaces[i] < cRight.ResultFaces[i] {
 				return 2
 			}
 		}
